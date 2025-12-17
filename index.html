@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Entreprise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .top-logo {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-logo img {
+            width: 80px;
+            height: 80px;
+            display: block;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 50px;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-circle {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #ff8c00 0%, #ffa500 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3.5em;
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 8px 30px rgba(255, 140, 0, 0.6);
+            }
+        }
+
+        .header h1 {
+            color: #ff8c00;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .connectivity-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f0f0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49%, 100% {
+                opacity: 1;
+            }
+            50%, 99% {
+                opacity: 0.5;
+            }
+        }
+
+        .status-text {
+            color: #4caf50;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .link-card {
+            background: white;
+            border: 3px solid #ff8c00;
+            border-radius: 8px;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .link-card:hover {
+            background: #ff8c00;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+        }
+
+        .link-card:hover h2 {
+            color: white;
+        }
+
+        .link-card:hover p {
+            color: white;
+        }
+
+        .link-card:hover .icon {
+            color: white;
+        }
+
+        .icon {
+            font-size: 3em;
+            color: #ff8c00;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .link-card h2 {
+            color: #ff8c00;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .link-card p {
+            color: #666;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .link-card a {
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #ff8c00;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .links-container {
+                gap: 20px;
+            }
+
+            .link-card {
+                padding: 25px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-logo">
+        <img src="TE_Connectivity_logo.svg" alt="TE Connectivity Logo">
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-circle">🏢</div>
+                </div>
+            </div>
+            <h1>EHS REPORTING</h1>
+            <p>Accédez rapidement à nos services</p>
+            <div class="connectivity-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Connecté</span>
+            </div>
+        </div>
+
+        <div class="links-container">
+            <!-- Lien 1 -->
+            <div class="link-card">
+                <a href="https://exemple.com/service1">
+                    <div class="icon">📊</div>
+                    <h2>EHS FOLLOW UP</h2>
+                    <p>Gestion et suivi des données</p>
+                </a>
+            </div>
+
+            <!-- Lien 2 -->
+            <div class="link-card">
+                <a href="https://exemple.com/service2">
+                    <div class="icon">👥</div>
+                    <h2>GAMBA WALK</h2>
+                    <p>Espace collaboratif</p>
+                </a>
+            </div>
+
+            <!-- Lien 3 -->
+            <div class="link-card">
+                <a href="https://exemple.com/service3">
+                    <div class="icon">⚙️</div>
+                    <h2>BBS</h2>
+                    <p>Configuration et paramètres</p>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 TE Connectivity. Tous droits réservés.</p>
+        </footer>
+    </div>
+</body>
+</html>
